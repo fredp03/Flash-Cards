@@ -1,0 +1,21 @@
+
+on init
+	make_perfview
+	set_ui_height_px(305)
+	set_ui_width_px(633)
+	declare $mouse_resp := -900
+	set_control_par_str($INST_WALLPAPER_ID,$CONTROL_PAR_PICTURE,"instrumentbackground")
+
+	declare ui_slider $Reverb(0,1000000)
+	make_persistent($Reverb)
+	declare $k_Reverb
+	$k_Reverb := get_ui_id($Reverb)
+	set_control_par_str($k_Reverb,$CONTROL_PAR_PICTURE,"simplered-37")
+	set_control_par($k_Reverb,$CONTROL_PAR_POS_X,55)
+	set_control_par($k_Reverb,$CONTROL_PAR_POS_Y,55)
+	set_control_par($k_Reverb,$CONTROL_PAR_MOUSE_BEHAVIOUR,$mouse_resp)
+end on
+
+on ui_control($Reverb)
+
+end on
